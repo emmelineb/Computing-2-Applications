@@ -7,7 +7,7 @@
         "request": "launch",
         "reAttach": true,
         "reloadOnAttach": true,
-        "file": "${fileDirname}/index.html",
+        "file": "${workspaceFolder}/web-app/static/index.html",
         "preferences": {
           "security.fileuri.strict_origin_policy": false
         }
