@@ -11,3 +11,7 @@ const add = function (x, y) {
 };
 
 const add_n = curry(add);
+
+console.log("Hello");
+
+debugger;
