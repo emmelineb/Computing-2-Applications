@@ -1,17 +1,12 @@
-const curry = function (f) {
-    return function (first) {
-        return function (second) {
-            return f(first, second);
-        };
-    };
-};
+function fibonacci(n) {
+    if (n === 0) {
+        return 0;
+    } else if (n === 1) {
+        return 1;
+    } else {
+        return (fibonacci(n - 1) + fibonacci(n - 2));
+    }
+}
 
-const add = function (x, y) {
-    return x + y;
-};
-
-const add_n = curry(add);
-
-console.log("Hello");
 
 debugger;
