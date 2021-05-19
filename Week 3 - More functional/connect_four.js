@@ -5,7 +5,7 @@ const board = [
     [0, 0, 0, 0]
 ];
 
-new_board = () => board;
+const new_board = () => board;
 
-red_move = (number) => (board) => board;
-yellow_move = (number) => (board) => board;
+const red_move = (number) => (board) => board;
+const yellow_move = (number) => (board) => board;
