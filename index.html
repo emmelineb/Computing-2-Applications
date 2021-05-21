@@ -7,11 +7,60 @@
 <script type="module" src="main.js"></script>
 
 <header>
-    <h1>Chat with Robots! 🤖</h1>
+    <h1>Welcome to your wardrobe </h1>
 </header>
 
+
 <main>
+
+    <script type=text/javascript">
+
+        var Image = new Array("images/top1.webp", "images/top2.webp", "images/top3.webp");
+
+        var Image_Number = 0;
+        var Image_Length = Image.length - 1;
+
+        function change_image(num) {
+
+            Image_Number = Image_Number + num;
+
+            if (Image_Number > Image_Length) {
+                // Sends slideshow back to the start once at the final element of the array
+                Image_Number = 0;
+            }
+
+            if (Image_Number < 0) {
+                // Sends slideshow to the end if at the first element of the array
+                Image_Number = Image_Length
+            }
+
+            document.slideshow.src= Image[Image_Number];
+            return false;
+        }
+    
+    </script>
+
+
+
+    <p>Welcome to your wardrobe! Press add to start adding clothes to it! Then have fun scrolling :)</p>
+    <img src="/top1.webp" name="slideshow" />
+
+    <table>
+        <tr>
+            <td align="left"><a href="main.js" onclick="return change_image(-1)">Previous</a></td>
+            <td align="right"><a href="javascript:change_image(1)">Next</a></td>
+        </tr>
+    </table>
+
+    <div id="description">
+
+    </div>
+
+
 </main>
 
 <nav>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhju-86XTnuWHAIS4pvzsTQhIj5hnBbq2BKA&usqp=CAU" height="75" width="75">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs1dyYCUparziYYUPuUkkKWbs6VfBRLi-iA&usqp=CAU" height="75" width="75">
 </nav>
+
