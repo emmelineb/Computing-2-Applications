@@ -1,54 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
 :root
 {
     --banner-height: 80px;
     --nav-width: 300px;
 }
 
-body
-{
-    background: #f80;
+body {
     height: 100%;
     width: 100%;
     position: absolute;
     margin: 0;
 }
 
-header
-{
-    background: #8f0;
-    height: var(--banner-height);
-    width: 100%;
-    position: absolute;
+header {    
+    text-align: center;
+    font-size: 30px;
+    font-family: Karla;
+    padding: 0;
 }
 
-main
-{
-    background: #80f;
-    width: calc(100% - var(--nav-width));
-    height: calc(100% - var(--banner-height));
-    position: absolute;
-    top: var(--banner-height);
-    left: var(--nav-width);
-}
-
-nav
-{
-    background: #08f;
-    position: absolute;
-    width: var(--nav-width);
-    height: calc(100% - var(--banner-height));
-    top: var(--banner-height)
+p {
+    text-align: center;
+    font-size: 12px;
+    font-family: Karla;
+    padding-bottom: 20px;
+    
 }
 
 .mySlidestops {
-    max-width:20%;
-    max-height:20%;
+    max-width:15%;
+    max-height:15%;
 }
 
 .mySlidesbottoms {
-    max-width:20%;
+    max-width:15%;
 
 }
+
+.sidebar {
+    list-style-type: none;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid gainsboro;
+    
+    position: fixed;
+    left: 2%;
+}
+
+.top-button-left {
+    position: relative;
+    left: 40%;
+}
+
+.button-left {
+    position: relative;
+    left: 40%;
+}
+
+.button-right {
+    position: relative;
+    left: 56.5%;
+}
+
 
 .center {
     display: block;
