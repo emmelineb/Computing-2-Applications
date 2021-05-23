@@ -39,3 +39,21 @@ nav
     height: calc(100% - var(--banner-height));
     top: var(--banner-height)
 }
+
+.mySlidestops {
+    max-width:20%;
+    max-height:20%;
+}
+
+.mySlidesbottoms {
+    max-width:20%;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
