@@ -12,51 +12,67 @@
 
 
 <main>
-
-    <script type=text/javascript">
-
-        var Image = new Array("images/top1.webp", "images/top2.webp", "images/top3.webp");
-
-        var Image_Number = 0;
-        var Image_Length = Image.length - 1;
-
-        function change_image(num) {
-
-            Image_Number = Image_Number + num;
-
-            if (Image_Number > Image_Length) {
-                // Sends slideshow back to the start once at the final element of the array
-                Image_Number = 0;
-            }
-
-            if (Image_Number < 0) {
-                // Sends slideshow to the end if at the first element of the array
-                Image_Number = Image_Length
-            }
-
-            document.slideshow.src= Image[Image_Number];
-            return false;
-        }
-    
-    </script>
-
-
-
     <p>Welcome to your wardrobe! Press add to start adding clothes to it! Then have fun scrolling :)</p>
-    <img src="/top1.webp" name="slideshow" />
+    <div class="w3-content-tops w3-display-container-tops">
+        <img class="mySlidestops center" src="top1.jpg">
+        <img class="mySlidestops center" src="top2.jpg">
+        <img class="mySlidestops center" src="top3.jpg">
 
-    <table>
-        <tr>
-            <td align="left"><a href="main.js" onclick="return change_image(-1)">Previous</a></td>
-            <td align="right"><a href="javascript:change_image(1)">Next</a></td>
-        </tr>
-    </table>
-
-    <div id="description">
-
+      
+        <button class="w3-button-tops w3-black-tops w3-display-left-tops" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button-tops w3-black-tops w3-display-right-tops" onclick="plusDivs(1)">&#10095;</button>
     </div>
 
+    <div class="w3-content-bottoms w3-display-container-bottoms"></div>
+        <img class="mySlidesbottoms center" src="bottom1.jpg">
+        <img class="mySlidesbottoms center" src="bottom2.jpg">
+        <img class="mySlidesbottoms center" src="bottom3.jpg">
 
+      
+        <button class="w3-button-bottoms w3-black-bottoms w3-display-left-bottoms" onclick="plusDivsb(-1)">&#10094;</button>
+        <button class="w3-button-bottoms w3-black-bottoms w3-display-right-bottoms" onclick="plusDivsb(1)">&#10095;</button>
+    </div>  
+      
+    <script>
+        // Controls top slideshow
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlidestops");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+        }
+        
+        // Controls bottoms slideshow
+        var slideIndexb = 1;
+        showDivsb(slideIndexb);
+        
+        function plusDivsb(n) {
+        showDivsb(slideIndexb += n);
+        }
+        
+        function showDivsb(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlidesbottoms");
+        if (n > x.length) {slideIndexb = 1}
+        if (n < 1) {slideIndexb = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndexb-1].style.display = "block";  
+        }
+
+    </script>
 </main>
 
 <nav>
