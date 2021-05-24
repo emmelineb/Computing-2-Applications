@@ -6,6 +6,8 @@
 {
     --banner-height: 80px;
     --nav-width: 300px;
+
+    font-family: Karla;
 }
 
 body {
@@ -16,19 +18,30 @@ body {
 }
 
 header {    
-    text-align: center;
-    font-size: 30px;
-    font-family: Karla;
+    font-size: 20px;
     padding: 0;
+    text-align: center;
 }
 
 p {
-    text-align: center;
     font-size: 12px;
-    font-family: Karla;
     padding-bottom: 20px;
-    
+    text-align: center;  
 }
+
+button {
+    background-color: gainsboro; 
+    border: none;
+    border-radius: 3px;
+    padding: 2px 5px;
+}
+
+h2 {
+    font-size: 15px;
+    padding: 0;
+    text-align: center;
+}
+
 
 .mySlidestops {
     max-width:15%;
@@ -37,7 +50,6 @@ p {
 
 .mySlidesbottoms {
     max-width:15%;
-
 }
 
 .sidebar {
@@ -58,12 +70,12 @@ p {
 
 .button-left {
     position: relative;
-    left: 40%;
+    left: 39%;
 }
 
 .button-right {
     position: relative;
-    left: 56.5%;
+    left: 57.5%;
 }
 
 
@@ -74,3 +86,40 @@ p {
     width: 50%;
 }
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

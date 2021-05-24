@@ -7,41 +7,45 @@
 <script type="module" src="main.js"></script>
 
 <header>
+    <! Header Title >
     <h1>Welcome to your wardrobe </h1>
 </header>
 
 
 <main>
+    <! Text about what the app does >
     <p>Welcome to your wardrobe! Press add to start adding clothes to it! Then have fun scrolling :)</p>
     
+    <! Sidebar images in a list >
     <div class="sidebar">
         <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhju-86XTnuWHAIS4pvzsTQhIj5hnBbq2BKA&usqp=CAU" height="50" width="50"></li>
         <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAs1dyYCUparziYYUPuUkkKWbs6VfBRLi-iA&usqp=CAU" height="50" width="50"></li>
     </div>
     
-    <div class="w3-content-tops w3-display-container-tops">
-        <img class="mySlidestops center" src="top1.jpg">
-        <img class="mySlidestops center" src="top2.jpg">
-        <img class="mySlidestops center" src="top3.jpg">
 
-      
-        <button class="button-left" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="button-right" onclick="plusDivs(1)">&#10095;</button>
+    <! Top images >
+    <img class="mySlidestops center" src="top1.jpg">
+    <img class="mySlidestops center" src="top2.jpg">
+    <img class="mySlidestops center" src="top3.jpg">
+
+    <! Top buttons >
+    <button class="button-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="button-right" onclick="plusDivs(1)">&#10095;</button>
     </div>
 
-    <div class="w3-content-bottoms w3-display-container-bottoms"></div>
-        <img class="mySlidesbottoms center" src="bottom1.jpg">
-        <img class="mySlidesbottoms center" src="bottom2.jpg">
-        <img class="mySlidesbottoms center" src="bottom3.jpg">
 
-      
-        <button class="button-left" onclick="plusDivsb(-1)">&#10094;</button>
-        <button class="button-right" onclick="plusDivsb(1)">&#10095;</button>
-    </div>  
-      
+    <! Bottom images >
+    <img class="mySlidesbottoms center" src="bottom1.jpg">
+    <img class="mySlidesbottoms center" src="bottom2.jpg">
+    <img class="mySlidesbottoms center" src="bottom3.jpg">
+
+    <! Bottom buttons >
+    <button class="button-left" onclick="plusDivsb(-1)">&#10094;</button>
+    <button class="button-right" onclick="plusDivsb(1)">&#10095;</button>
+    
     <script>
-        // Controls top slideshow
-        var slideIndex = 1;
+    // Controls top slideshow with buttons
+    var slideIndex = 1;
         showDivs(slideIndex);
         
         function plusDivs(n) {
@@ -58,27 +62,63 @@
         }
         x[slideIndex-1].style.display = "block";  
         }
-        
-        // Controls bottoms slideshow
-        var slideIndexb = 1;
-        showDivsb(slideIndexb);
-        
-        function plusDivsb(n) {
-        showDivsb(slideIndexb += n);
-        }
-        
-        function showDivsb(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlidesbottoms");
-        if (n > x.length) {slideIndexb = 1}
-        if (n < 1) {slideIndexb = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-        }
-        x[slideIndexb-1].style.display = "block";  
-        }
-
+    
+    // Controls bottoms slideshow with buttons
+    var slideIndexb = 1;
+            showDivsb(slideIndexb);
+            
+            function plusDivsb(n) {
+            showDivsb(slideIndexb += n);
+            }
+            
+            function showDivsb(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlidesbottoms");
+            if (n > x.length) {slideIndexb = 1}
+            if (n < 1) {slideIndexb = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            x[slideIndexb-1].style.display = "block";  
+            }
     </script>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Add</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add your clothes</h2>
+            <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+            <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+            <p><img id="output" width="200" /></p>
+
+            <select>
+                <option id="myOption" value="tops">Top</option>
+                <option value="bottoms">Bottom</option>
+            </select>
+        
+            <script>
+            var loadFile = function(event) {
+                var image = document.getElementById('output');
+                image.src = URL.createObjectURL(event.target.files[0]);
+            };
+
+            //const typeSelection(selection) => {
+                //if (selection === "tops") {
+                    //add image to top container
+                //} else {
+                   // add image to bottom container
+                //}
+            //}
+            </script>
+        </div>
+
+    </div>
 
 
 </main>
